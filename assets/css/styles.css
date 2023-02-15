@@ -22,7 +22,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/* font: inherit; */
 	vertical-align: baseline;
 }
 
@@ -34,10 +34,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-}
-
-ol, ul {
-	list-style: none;
 }
 
 blockquote, q {
@@ -53,31 +49,48 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+    margin: 2rem 0;
 }
 
-/*  --- Home --- */
+/*  --- Own styles --- */
 
 body {
     width: 1200px;
+    font-family: Georgia, serif;
+    background-image: url(../img/ice_age.png);
+    /* background-color: bisque; */
 }
+
+main{
+    background-color: white;
+}
+
+aside {
+    margin: 2rem;
+}
+
+nav {
+    padding-top: 3rem;
+}
+
 nav a {
     text-decoration: underline;
     display: block;
-    margin: 50px;
+    margin: 1rem;
     font-size: 20px;
     font-weight: bold;
 }
 nav a:active {
     text-decoration: none;
 }
+
+.list-circle{
+    list-style-type:circle;
+}
   
 dl {
     display: inline-block;
     position: relative;
-    left: 300px;
-    top: -220px;
-    text-align: left;
-    font-size: 25px;
 }
   
 dt {
@@ -93,6 +106,8 @@ dt {
 
 .container {
     margin: 0 auto;
+    border-right: 1rem solid white;
+    border-left: 1rem solid white;
 }
 
 .overflow{
@@ -102,7 +117,7 @@ dt {
   
 .title {
     position: absolute;
-    display: block;
+    display: none;
     color: #131313;
     font-family: Georgia, serif;
     text-align: center;
@@ -112,26 +127,27 @@ dt {
   
 .logo {
     position: absolute;
-    width: 200px;
-    top: 400px;
-    right: 400px;
+    width: 250px;
+    top: 330px;
     background-color: white;
-    border-image: 20px;
     border: 5px solid black;
+    margin: 2rem;
+    padding: 0.5rem;
 }
   
 .main-title {
-    font-family: Georgia, serif;
     background-color: black;
     color: yellow;
     display: block;
     text-align: center;
-    font-size: 2em;
-    padding: 0.5em;
+    font-size: 2rem;
+    padding: 1rem 1rem 1rem 15rem;
+    text-transform: uppercase;
 }
 
 .main-section {
-    font-family: Georgia, serif;
+    display: inline-block;
+    justify-content: center;
 }
 
 .main-section dd {
@@ -143,5 +159,85 @@ dt {
 }
 
 section{
-    width: 900px;
+    width: 800px;
+    vertical-align: top;
+    margin: 6rem 0;
 }
+
+h1,h2,h3,h4,h5,h6,p,ol,ul,li,dl,dt {
+	margin-bottom: 1rem;
+    line-height: normal;
+    text-align: justify;
+}
+
+ol, ul, li {
+    margin-left: 8px;
+}
+
+th, td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+th{
+    font-weight: bold;
+    text-align: left;
+    background-color: black;
+    color: #fff;
+}
+tr {
+    border: 1px solid black;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    justify-content: center;
+    display: flex;
+    background: #609e96;
+    color: white;
+    align-content: center;
+    padding: 1rem;
+}
+
+/*** GROW SKEW button styles  ***/
+.ov-btn-grow-skew {
+    background: #fff;
+    color: #609e96;
+    border: 2px solid #609e96;
+    padding: 16px 20px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;
+  }
+
+  .ov-btn-grow-skew:hover {
+    color: #fff;
+  }
+  .ov-btn-grow-skew::after {
+    content: "";
+    background: #609e96;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-skew:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
