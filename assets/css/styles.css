@@ -98,6 +98,53 @@ dt {
     font-size: 22px;
 }
 
+fieldset, legend {
+    padding: 1rem;
+    border: #000 solid 1px;
+    margin-bottom: 1rem;
+}
+
+form{
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#f5f5f5cc;
+}
+
+form label{
+	display:inline-block;
+    margin: 10px 10px;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#fff;
+	margin:8px 0;
+	display:inline-block;
+}
+
+#submit{
+    background: #609e96;
+    color: #fff;
+    border: 2px solid #609e96;
+    padding: 16px 20px;
+    border-radius: 3px;
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background: #fff;
+    color: #609e96;
+}
+
 .slide {
     position: static;
     width: 100%;
@@ -241,3 +288,106 @@ footer {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
+
+    /*** Modal  ***/
+    /* Refactor convert pug to html and sass to css */
+    /* https://codepen.io/AlvaroFelipe/pen/WvXgqb */
+
+    #modal {
+        background: rgba(0, 0, 0, .9);
+        color: #fff;
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        transition: all 0.5s;
+   }
+    #modal iframe {
+        width: 60%;
+        height: 40%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        font-size: 1.5em;
+        text-align: center;
+   }
+    #see-modal, #see-modal2, #see-modal3,
+    #see-modal4, #see-modal5, #see-modal6,
+    #see-modal7, #see-modal8, #see-modal9 {
+        display: none;
+   }
+    #see-modal + label, #see-modal2 + label,
+    #see-modal3 + label, #see-modal4 + label,
+    #see-modal5 + label, #see-modal6 + label,
+    #see-modal7 + label, #see-modal8 + label,
+    #see-modal9 + label {
+        background: #609e96;
+        color: #fff;
+        padding: 0em 0.3em;
+        cursor: pointer;
+        border-radius: 50%;
+   }
+    #see-modal + label:hover, #see-modal2 + label:hover,
+    #see-modal3 + label:hover, #see-modal4 + label:hover,
+    #see-modal5 + label:hover, #see-modal6 + label:hover,
+    #see-modal7 + label:hover, #see-modal8 + label:hover,
+    #see-modal9 + label:hover {
+        background: #609e96;
+   }
+    #see-modal:checked ~ #modal,
+    #see-modal2:checked ~ #modal,
+    #see-modal3:checked ~ #modal,
+    #see-modal4:checked ~ #modal,
+    #see-modal5:checked ~ #modal,
+    #see-modal6:checked ~ #modal,
+    #see-modal7:checked ~ #modal,
+    #see-modal8:checked ~ #modal,
+    #see-modal9:checked ~ #modal {
+        top: 0;
+        z-index: 99;
+   }
+    #see-modal:checked ~ #close-modal + label,
+    #see-modal2:checked ~ #close-modal + label,
+    #see-modal3:checked ~ #close-modal + label,
+    #see-modal4:checked ~ #close-modal + label,
+    #see-modal5:checked ~ #close-modal + label,
+    #see-modal6:checked ~ #close-modal + label,
+    #see-modal7:checked ~ #close-modal + label,
+    #see-modal8:checked ~ #close-modal + label,
+    #see-modal9:checked ~ #close-modal + label {
+        position: fixed;
+        display: block;
+        top: 17%;
+        right: 17%;
+   }
+    #close-modal {
+        display: none;
+   }
+    #close-modal + label {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        z-index: 100;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        background: #609e96;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
+        display: none;
+        transition: all 0.5s;
+   }
+    #close-modal:checked ~ #modal {
+        top: -100vh;
+        z-index: 100;
+   }
+    #close-modal:checked + label {
+        display: none;
+   }
